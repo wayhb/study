@@ -1,4 +1,5 @@
-﻿using System;
+﻿//создайте единый класс для всех организмов
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

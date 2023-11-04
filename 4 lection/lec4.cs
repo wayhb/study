@@ -1,4 +1,5 @@
-﻿class Program
+﻿//что такое лист и лямбла-выражения
+class Program
 {
     static void Main(string[] args)
     {

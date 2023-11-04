@@ -14,20 +14,20 @@
 //это исключение.
 using System.Collections.Concurrent;
 using System.Reflection.Metadata.Ecma335;
-/*
+
 Console.WriteLine("Enter 2 numbers: ");
 
 try
 {
 int num1 = Int32.Parse(Console.ReadLine());
 int num2 = Int32.Parse(Console.ReadLine());
-Console.WriteLine(num1/num2); 
+Console.WriteLine(num1 / num2);
 }
-catch(DivideByZeroException)
-{ 
+catch (DivideByZeroException)
+{
 Console.WriteLine("исключение: на 0 делить нельзя!");
 }
-catch(FormatException)
+catch (FormatException)
 {
 Console.WriteLine("То что вы ввели не является числом!");
 }
@@ -35,22 +35,22 @@ finally
 {
 Console.WriteLine("Program is completed");
 }
-*/
+
 //4
-/*
+
 try
 {
-    int num1 = Int32.Parse(Console.ReadLine());
-    int num2 = Int32.Parse(Console.ReadLine());
-    Console.WriteLine(num1 / num2);
+int num1 = Int32.Parse(Console.ReadLine());
+int num2 = Int32.Parse(Console.ReadLine());
+Console.WriteLine(num1 / num2);
 }
 catch (InvalidInputException e)
 {
-    Console.WriteLine("ошибка: {0}", e.Message);
+Console.WriteLine("ошибка: {0}", e.Message);
 }
 catch (FormatException e)
 {
-    Console.WriteLine("ошибка: {0}", e.Message);
+Console.WriteLine("ошибка: {0}", e.Message);
 }
 public class InvalidInputException : Exception
 {
@@ -61,7 +61,7 @@ public class InvalidInputException2 : FormatException
     public InvalidInputException2(string message) : base(message) { }
 }
 
-*/
+
 int num1, num2;
 num1 = Int32.Parse(Console.ReadLine());
 num2 = Int32.Parse(Console.ReadLine());

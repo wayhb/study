@@ -1,4 +1,7 @@
-﻿Product apple = new Product("apple", 90.5, 1000);
+﻿//В данном примере представлено решение задания:
+//Создайте класс Product, который представляет продукт в интернет-магазине.
+//Добавьте соответствующие модификаторы доступа к объектам
+Product apple = new Product("apple", 90.5, 1000);
 apple.DisplayProductInfo();
 Product.PrintTaxRate();
 Product.PrintTotalValueWithTax(apple);
