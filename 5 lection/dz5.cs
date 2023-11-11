@@ -1,82 +1,70 @@
-﻿//главное меню
-using System.Diagnostics.CodeAnalysis;
-using System.Xml.Serialization;
+﻿/*Задание - “Банк и очередь клиентов”
 
+Описание: “Есть банк, который выдает депозит по n-ставке клиентам. 
+Клиент сам принимает решение открыть депозит, если его удовлетворяет ставка.  
+В банк приходить сразу много клиентов, обслуживание происходит моментально”
+
+Внимание: В данном задание приоритет отдается ДЕЛЕГАТАМ, любыми циклами запрещено 
+пользоваться.
+
+Шаги:
+1 - Разработать класс Банка, который должен включать в себя коллекцию открытых депозитов
+и ставку которую выдает. А также методы обслуживания всех клиентов, открытия депозита.
+Подсказка: В данном классе есть делегаты и вложенный объект о хранение инфы клиента и его
+депозите.
+
+2 - Разработать класс Пользователь, который должен содержать Имя, деньги и методы вхождение
+в банк, уход из банка и принятие решения о создание счета в банке или нет. 
+Если ставка банка устраивает пользователя, то он открывает депозит и кладет в него случайную
+сумму денег.
+
+3 - Практика. Создать несколько клиентов с разными предпочтением по ставке и начальным
+деньгам. Создать банк с некоторой ставкой по депозиту.
+Все клиенты идут в банк, после банк вызывает метод обслуживание ВСЕХ клиентов, в результате
+некоторые клиенты открывают депозиты, после клиенты покидают банк.
+*/
 Bank bank = new BankTea();
-User user = new();
-//создать несколько пользователей, которые входят в банк
-Console.WriteLine($"Добрый день! Вас приветствует банк \"{bank.Name}\". \n" +
-    "Чтобы открыть счет по выгодной ставке нажмите клавишу 1. ");
+User user1 = new(6.8);
+
+User user2 = new(7.9);
+User user3 = new(2);
+user1.EnterBank(bank);
+user2.EnterBank(bank);
+user3.EnterBank(bank);
+
+bank.Obsluzhivanie();
+
+user1.ExitBank(bank);
+user2.ExitBank(bank);
+user3.ExitBank(bank);
 
 
-//do
-//{
-//    Console.WriteLine($"Добрый день! Вас приветствует банк {bank.Name}. \n" +
-//        "Чтобы открыть счет по выгодной ставке нажмите клавишу 1. Чтобы узнать информацию о вашем счете нажмите 2");
-//    try
-//    {
-//        choice = int.Parse(Console.ReadLine());
-//    }
-//    catch (FormatException)
-//    {
-//        Console.WriteLine("Ошибка: Введено не число!");
-//        //Console.Clear();
-//        continue;
-//    }
-//    if(choice<0 && choice>2)
-//    {
-//        Console.WriteLine("Вы ввели неправильное число");
-//        continue;
-//    }
-//switch (choice)
-//{
-//    case 0:
-//        break;
-//    case 1:
-//        user.OpenDeposit(); // открытие счета
-//    case 2:
-//        user.OutputInfoOfUsers(); //информация о пользователе
-//}
-//}
-//while (choice != 0);
-//********************************************************************база данных с пользователями
-//opendeposit --> отображение видов депозитов --> устраивает ли пользователя это -->
-//да-> переход на создание infoofuser, нет -> choice меняется на 0 --> choice меняется на 0
 public abstract class Bank : IDeposit
 {
     public abstract string Name { get; }
 
     public abstract double Rate { get; }
 
-    //public event Action OnOutputRate;
-    //public event Action OnTypesOfDeposits;
-    public event Action Ratee;
-    //создать делегат который соответствует сигнатуре метода пользователя 
-    //void Choice(double rate, Action <User, double> callback)
-    //с action 
-    public abstract double Calculator(double currentsum, int month);
-    public abstract double CloseDeposit(double sum);
-    public abstract void OpenDeposit(double sum);
+
+
+
+    public event Action<double, Action<User, double>> Bup;
+    public abstract double CloseDeposit(User user, double sum);
+    public virtual void OpenDeposit(User user, double sum)
+    {
+        var info = new Info();
+        info.rate = Rate;
+        info.currentSum = 0;
+        info.startSum = sum;
+        info.months = 0;
+        _archive.Add(user, info);
+    }
     protected Dictionary<User, Info> _archive = new();
 
-    //public void LowWeight()
-    //    {
-    //        weight--;
-    //        OnChrust?.Invoke(); // ====> OnChrust();
-    //        var user = OnWeig?.Invoke(weight);
-    //        user.Nyam();
-
-    //    }
-    public double Service(User user)
+    public void Obsluzhivanie()
     {
-        Random r = new Random();
-        int rate = r.Next(7, 15);
+        Bup?.Invoke(Rate, OpenDeposit);
     }
-    //создать метод, который будет обслуживать клиента 
-    //подсказка: соответствует сигнатуре делегата в методе void Choice(double rate, Action <User, double> callback)
-    //алгоритм создания депозита:
-    //1. создаем новую информацию info и заполняем current = 0
-    //2. добавить инфу в словарик
 
     protected struct Info
     {
@@ -85,16 +73,6 @@ public abstract class Bank : IDeposit
         public double startSum;
         public int months;
     }
-    //struct TypesOfDeposits
-    //{
-    //    List<string> nameOfDeposit = new List<string>() { "Contribution Best %", "Simple deposit", "Savings account" };
-    //    List<double> rate = new List<double>() { 14, 12.75, 7 };
-    //    List<double> sum = new List<double>() { 100000, 100000, 0 };// сумма вклада
-    //    List<double> time = new List<double>() { 1, 1, 0 };//срок на который надо положить как минимум\
-    //    List<string> conditions = new List<string>() { "Без пополнения и без снятия", "Есть пополнение, но без снятия", "Есть и пополнение и снятие" };
-
-    //}
-
 }
 public class BankTea : Bank
 {
@@ -102,63 +80,49 @@ public class BankTea : Bank
 
     public override double Rate { get => 10; }
 
-    public override double Calculator(double currentsum, int month)
+    public override double CloseDeposit(User user, double sum)
     {
-        throw new NotImplementedException();
+        return sum;
     }
 
-    public override double CloseDeposit(double sum)
+    public override void OpenDeposit(User user, double sum)
     {
-        throw new NotImplementedException();
-    }
-
-    public override void OpenDeposit(double sum)
-    {
-        throw new NotImplementedException();
-        User, double
+        
     }
 }
-public class User
+public class User 
 {
-    // через делегат передать rate 
-
-    public User()
+    public User(double targetRate) 
     {
-        //bank.OnTypesOfDeposits += OutPutOfDeposits;
+        TargetRate = targetRate;
     }
-    //Имя, деньги и методы вхождение в банк, 
-    //уход из банка и принятие решения о создание счета в банке или нет.
-
-    // Свойство класса
-    public string Name { get; set; }
+    
+    public string Name{get; set;}
     public double Money { get; set; }
     public double TargetRate { get; set; }
 
     public void EnterBank(Bank bank)
     {
-
+        bank.Bup += Choice;
     }
     public void ExitBank(Bank bank)
     {
-
+        bank.Bup -= Choice;
     }
-    private void Choice(double rate, Action<User, double> callback)
+    private void Choice(double rate, Action <User, double> callback)
     {
-        // сделать проверку на targetrate с входящей ставкой, если да - случайно кол-во денег(не 0),
-        // и вызываем колбэк( return callback)
-        //целевая ставка и ставка пользователя
+        if(rate > TargetRate) // банка и пользователя ставка
+        {
+            Random rand = new Random();
+            double denga = rand.NextDouble() * Money;
+            Money -= denga;
+            callback?.Invoke(this, denga);
+        }
     }
-    //Если ставка банка устраивает пользователя, то он открывает депозит и кладет
-    //в него случайную сумму денег.
-    // метод который приветствует пользователя и предлагает открыть счет в банке под проценты,
-    //ответ пользователя - переход в конец с сообщением желаем снова встречи с вами либо вывод
-    //сообщение что вы открыли счет на такую то сумму денег
 }
-//нач сумму и сумма накоплений и пользователя
 public interface IDeposit
 {
     double Rate { get; }
-    void OpenDeposit(double sum);
-    double CloseDeposit(double sum);
-    double Calculator(double currentsum, int month);
+    void OpenDeposit(User user, double sum);
+    double CloseDeposit(User user, double sum);
 }
