@@ -9,10 +9,10 @@
 
 Table table = new();
 
-User user1 = new();
-User user2 = new();
-User user3 = new();
-User user4 = new();
+User user1 = new("Masha");
+User user2 = new("Pasha");
+User user3 = new("Kasha");
+User user4 = new("Natasha");
 
 user1.ApproachTheTable(table);
 user2.ApproachTheTable(table);
@@ -29,6 +29,11 @@ user4.StepAwayFromTheTable(table);
 public class User
 {
     public string Name { get; set; }
+    public User(string name)
+    {
+        Name = name;
+    }
+
     public void ApproachTheTable(Table table)
     {
         table.Choiced += Choice;
@@ -40,8 +45,8 @@ public class User
     private void Choice(Action<User, drinks> callback)
     {
         Random rand = new Random();
-        List<drinks> Drinks = new List<drinks>() { Ulun, Puer, DaHongPao, Espresso, Latte, Cappuccino };
-        int choice = rand.Next(0,5);
+        List<drinks> Drinks = new List<drinks>() { new Ulun(), new Puer(), new DaHongPao(), new Espresso(), new Latte(), new Cappuccino() };
+        int choice = rand.Next(0, 5);
         callback?.Invoke(this, Drinks[choice]);
     }
 }
@@ -64,7 +69,7 @@ public abstract class drinks
 {
     public abstract string Name { get; }
 }
-public abstract class Coffee: drinks
+public abstract class Coffee : drinks
 {
     public abstract int Level { get; }
 }
@@ -72,7 +77,7 @@ public abstract class Tea : drinks
 {
     public abstract string Сolor { get; }
 }
-class Ulun :Tea
+class Ulun : Tea
 {
     public override string Name => "Ulun";
     public override string Сolor => "green";
