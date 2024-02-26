@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Adelya\\Desktop\\c#\\Messanger\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\Adelya\\Desktop\\study\\lesson 20.02.2024 Messanger\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\Users\\Adelya\\Desktop\\c#\\Messanger\\Server\\Server.csproj",
+      "projectPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 20.02.2024 Messanger\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\Adelya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Adelya\\Desktop\\c#\\Messanger\\Server\\obj\\",
+      "outputPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 20.02.2024 Messanger\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Adelya\\AppData\\Roaming\\NuGet\\NuGet.Config",

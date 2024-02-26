@@ -1,0 +1,14 @@
+C:\Users\Adelya\Desktop\c#\Json\Json\bin\Debug\net8.0\Json.exe
+C:\Users\Adelya\Desktop\c#\Json\Json\bin\Debug\net8.0\Json.deps.json
+C:\Users\Adelya\Desktop\c#\Json\Json\bin\Debug\net8.0\Json.runtimeconfig.json
+C:\Users\Adelya\Desktop\c#\Json\Json\bin\Debug\net8.0\Json.dll
+C:\Users\Adelya\Desktop\c#\Json\Json\bin\Debug\net8.0\Json.pdb
+C:\Users\Adelya\Desktop\c#\Json\Json\obj\Debug\net8.0\Json.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adelya\Desktop\c#\Json\Json\obj\Debug\net8.0\Json.AssemblyInfoInputs.cache
+C:\Users\Adelya\Desktop\c#\Json\Json\obj\Debug\net8.0\Json.AssemblyInfo.cs
+C:\Users\Adelya\Desktop\c#\Json\Json\obj\Debug\net8.0\Json.csproj.CoreCompileInputs.cache
+C:\Users\Adelya\Desktop\c#\Json\Json\obj\Debug\net8.0\Json.dll
+C:\Users\Adelya\Desktop\c#\Json\Json\obj\Debug\net8.0\refint\Json.dll
+C:\Users\Adelya\Desktop\c#\Json\Json\obj\Debug\net8.0\Json.pdb
+C:\Users\Adelya\Desktop\c#\Json\Json\obj\Debug\net8.0\Json.genruntimeconfig.cache
+C:\Users\Adelya\Desktop\c#\Json\Json\obj\Debug\net8.0\ref\Json.dll

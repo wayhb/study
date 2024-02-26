@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Adelya\\Desktop\\c#\\Messanger\\Client\\Client.csproj": {}
+    "C:\\Users\\Adelya\\Desktop\\study\\lesson 20.02.2024 Messanger\\Client\\Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adelya\\Desktop\\c#\\Messanger\\Client\\Client.csproj": {
+    "C:\\Users\\Adelya\\Desktop\\study\\lesson 20.02.2024 Messanger\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adelya\\Desktop\\c#\\Messanger\\Client\\Client.csproj",
+        "projectUniqueName": "C:\\Users\\Adelya\\Desktop\\study\\lesson 20.02.2024 Messanger\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "C:\\Users\\Adelya\\Desktop\\c#\\Messanger\\Client\\Client.csproj",
+        "projectPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 20.02.2024 Messanger\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\Adelya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adelya\\Desktop\\c#\\Messanger\\Client\\obj\\",
+        "outputPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 20.02.2024 Messanger\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Adelya\\AppData\\Roaming\\NuGet\\NuGet.Config",
