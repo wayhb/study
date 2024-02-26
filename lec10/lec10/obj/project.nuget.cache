@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "gxFugLDyI7Lhbo/agqYxUe5W0g3tAR6NWVlhQ/J7K2bLNkvMOJKLCcNIGscn2D8V8+NkKAXfov8EDV7AF7pv7g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Adelya\\Desktop\\study\\lec10\\lec10\\lec10.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Adelya\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Adelya\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Adelya\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Adelya\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,14 @@
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\bin\Debug\net6.0\dzdec.exe
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\bin\Debug\net6.0\dzdec.deps.json
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\bin\Debug\net6.0\dzdec.runtimeconfig.json
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\bin\Debug\net6.0\dzdec.dll
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\bin\Debug\net6.0\dzdec.pdb
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\obj\Debug\net6.0\dzdec.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\obj\Debug\net6.0\dzdec.AssemblyInfoInputs.cache
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\obj\Debug\net6.0\dzdec.AssemblyInfo.cs
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\obj\Debug\net6.0\dzdec.csproj.CoreCompileInputs.cache
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\obj\Debug\net6.0\dzdec.dll
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\obj\Debug\net6.0\refint\dzdec.dll
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\obj\Debug\net6.0\dzdec.pdb
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\obj\Debug\net6.0\dzdec.genruntimeconfig.cache
+C:\Users\SystemX\Desktop\c#\dzdec\dzdec\obj\Debug\net6.0\ref\dzdec.dll

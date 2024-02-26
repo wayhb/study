@@ -1,0 +1,6 @@
+lec7 - mediator singleton 14.11 какое то дз от анимешника
+lec8 - linq 17.11 -
+lec9 - атрибуты, reflection, BindingFlags 21.11
+lec10 - 28.11
+
+
