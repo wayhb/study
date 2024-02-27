@@ -25,7 +25,7 @@ namespace NetMessanger
         public readonly DateTime dateTime;
         [JsonInclude]
         public readonly string text;
-        public string Sender { get; set; }
-        public string Receiver {  get; set; }
+        public User Sender { get; set; }
+        public User Receiver {  get; set; }
     }
 }
