@@ -4,7 +4,7 @@
 using System.Net.Sockets;
 using System.Reflection.Metadata;
 using System.Text;
-
+/*
 static void HandleClient(TcpClient client)
 {
     //каждый раз сервер читает байты от пользователя
@@ -34,3 +34,10 @@ using (var server = new TcpListener(2020))
     }
 }
 
+*/
+
+
+
+
+var server = new Server.Server();
+server.Listen();

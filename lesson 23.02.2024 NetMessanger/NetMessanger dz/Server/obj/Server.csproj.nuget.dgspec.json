@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Adelya\\Desktop\\c#\\NetMessanger\\Server\\Server.csproj": {}
+    "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\NetMessanger dz\\Server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adelya\\Desktop\\c#\\NetMessanger\\Server\\Server.csproj": {
+    "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\NetMessanger dz\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adelya\\Desktop\\c#\\NetMessanger\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\NetMessanger dz\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\Adelya\\Desktop\\c#\\NetMessanger\\Server\\Server.csproj",
+        "projectPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\NetMessanger dz\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\Adelya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adelya\\Desktop\\c#\\NetMessanger\\Server\\obj\\",
+        "outputPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\NetMessanger dz\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Adelya\\AppData\\Roaming\\NuGet\\NuGet.Config",

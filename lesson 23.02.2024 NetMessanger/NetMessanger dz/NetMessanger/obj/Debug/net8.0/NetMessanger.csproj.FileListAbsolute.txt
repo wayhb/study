@@ -12,3 +12,18 @@ C:\Users\Adelya\Desktop\c#\NetMessanger\NetMessanger\obj\Debug\net8.0\refint\Net
 C:\Users\Adelya\Desktop\c#\NetMessanger\NetMessanger\obj\Debug\net8.0\NetMessanger.pdb
 C:\Users\Adelya\Desktop\c#\NetMessanger\NetMessanger\obj\Debug\net8.0\NetMessanger.genruntimeconfig.cache
 C:\Users\Adelya\Desktop\c#\NetMessanger\NetMessanger\obj\Debug\net8.0\ref\NetMessanger.dll
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\bin\Debug\net8.0\NetMessanger.exe
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\bin\Debug\net8.0\NetMessanger.deps.json
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\bin\Debug\net8.0\NetMessanger.runtimeconfig.json
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\bin\Debug\net8.0\NetMessanger.dll
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\bin\Debug\net8.0\NetMessanger.pdb
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\obj\Debug\net8.0\NetMessanger.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\obj\Debug\net8.0\NetMessanger.AssemblyInfoInputs.cache
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\obj\Debug\net8.0\NetMessanger.AssemblyInfo.cs
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\obj\Debug\net8.0\NetMessanger.csproj.CoreCompileInputs.cache
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\obj\Debug\net8.0\NetMessanger.sourcelink.json
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\obj\Debug\net8.0\NetMessanger.dll
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\obj\Debug\net8.0\refint\NetMessanger.dll
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\obj\Debug\net8.0\NetMessanger.pdb
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\obj\Debug\net8.0\NetMessanger.genruntimeconfig.cache
+C:\Users\Adelya\Desktop\study\lesson 23.02.2024 NetMessanger\NetMessanger dz\NetMessanger\obj\Debug\net8.0\ref\NetMessanger.dll

@@ -39,8 +39,10 @@ namespace NetMessanger
         }
         public static void Save()
         {
+            Directory.CreateDirectory("data");
             using (var file = File.Create("data\\users.json"))
             {
+                // utf8 при сериализации!!
                 JsonSerializer.Serialize<List<User>>(file, Users);
             }
         }
@@ -57,7 +59,11 @@ namespace NetMessanger
             { 
                 Users=new List<User>();
             }
-            catch(Exception ex)
+            catch(DirectoryNotFoundException)
+            {
+                Users = new List<User>();
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("Необработанная ошибка");
                 throw ex;

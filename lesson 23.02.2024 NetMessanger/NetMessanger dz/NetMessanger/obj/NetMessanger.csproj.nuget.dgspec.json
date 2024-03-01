@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Adelya\\Desktop\\c#\\NetMessanger\\NetMessanger\\NetMessanger.csproj": {}
+    "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\NetMessanger dz\\NetMessanger\\NetMessanger.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adelya\\Desktop\\c#\\NetMessanger\\NetMessanger\\NetMessanger.csproj": {
+    "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\NetMessanger dz\\NetMessanger\\NetMessanger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adelya\\Desktop\\c#\\NetMessanger\\NetMessanger\\NetMessanger.csproj",
+        "projectUniqueName": "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\NetMessanger dz\\NetMessanger\\NetMessanger.csproj",
         "projectName": "NetMessanger",
-        "projectPath": "C:\\Users\\Adelya\\Desktop\\c#\\NetMessanger\\NetMessanger\\NetMessanger.csproj",
+        "projectPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\NetMessanger dz\\NetMessanger\\NetMessanger.csproj",
         "packagesPath": "C:\\Users\\Adelya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adelya\\Desktop\\c#\\NetMessanger\\NetMessanger\\obj\\",
+        "outputPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\NetMessanger dz\\NetMessanger\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Adelya\\AppData\\Roaming\\NuGet\\NuGet.Config",
