@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Adelya\\Desktop\\c#\\Json\\Json\\Json.csproj",
+      "projectUniqueName": "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\Json\\Json\\Json.csproj",
       "projectName": "Json",
-      "projectPath": "C:\\Users\\Adelya\\Desktop\\c#\\Json\\Json\\Json.csproj",
+      "projectPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\Json\\Json\\Json.csproj",
       "packagesPath": "C:\\Users\\Adelya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Adelya\\Desktop\\c#\\Json\\Json\\obj\\",
+      "outputPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 23.02.2024 NetMessanger\\Json\\Json\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Adelya\\AppData\\Roaming\\NuGet\\NuGet.Config",
