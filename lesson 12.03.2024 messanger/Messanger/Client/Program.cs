@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Threading.Channels;
 using Shared;
 namespace Client
 {
@@ -8,7 +9,7 @@ namespace Client
         {
             Console.WriteLine("Введите имя и пароль: ");
 
-            SignUpMessage signUpMessage = new SignUpMessage();
+            SignUpRequest signUpMessage = new SignUpRequest();
             signUpMessage.username = Console.ReadLine();
             signUpMessage.password = Console.ReadLine();
             Client.SendMessage(signUpMessage);
@@ -22,10 +23,33 @@ namespace Client
             Client = new Client();
 
             Client.active = true;
-            Client.OnSignIn += () => 
+            Client.OnSignUp += (m) =>
             {
-                Console.WriteLine("что нибудь");
+                if(m.Success) 
+                {
+                    Console.WriteLine("Регистрация успешна!");
+                    Client.SendMessage(new SignOutRequest());
+                }
+                else
+                {
+                    Console.WriteLine("Регистрация неуспешна!");
+                    Client.SendMessage(new SignInRequest { username = "Adel", password = "jfdh" });
+                }
+                
             };
+            Client.OnSignIn += (m) =>
+            {
+                if (m.Success)
+                {
+                    Console.WriteLine("success");
+                }
+                else
+                    Console.WriteLine("failure");
+            };
+            Client.SendMessage(new SignUpRequest { username = "Adel", password = "jfdh"});
+            
+            
+            /*
             Console.WriteLine("У вас уже есть аккаунт? y or n?");
             while (true)
             {
@@ -42,7 +66,7 @@ namespace Client
                         break;
                 }
             }
-
+            */
         }
     }
 }

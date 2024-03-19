@@ -12,8 +12,10 @@ namespace Shared
     //когда происходит сериализация или десириализация класса netmessage, то в данном случае
     //используется объект SendMessageNetMessage
     //nameof(SendMessageNetMessage) как этот тип называется в json
-    [JsonDerivedType(typeof(SignUpMessage),nameof(SignUpMessage))]
+    [JsonDerivedType(typeof(SignUpRequest),nameof(SignUpRequest))]
     [JsonDerivedType(typeof(SignUpResponse), nameof(SignUpResponse))]
+    [JsonDerivedType(typeof(SignInRequest), nameof(SignInRequest))]
+    [JsonDerivedType(typeof(SignInResponse), nameof(SignInResponse))]
     public abstract class NetMessage
     {
 

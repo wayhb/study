@@ -9,8 +9,10 @@ namespace Client
     class Client : SendAndGetMessage
     {
         readonly TcpClient __tcp_client = new();
-        public delegate void OnSignInHandler();
+        public delegate void OnSignInHandler(SignInResponse sign);
         public event OnSignInHandler OnSignIn;
+        public delegate void OnSignUpHandler(SignUpResponse sign);
+        public event OnSignUpHandler OnSignUp;
         public bool active
         {
             get
@@ -39,18 +41,13 @@ namespace Client
                                         var mes = JsonSerializer.Deserialize<NetMessage>(__buffer.AsSpan(0, bytes));
                                         if (mes is SignUpResponse)
                                         {
-                                            Console.WriteLine("Это SignUpResponse");
                                             SignUpResponse message = (SignUpResponse)mes;
-                                            if (message.Success == true)
-                                            {
-                                                Console.WriteLine("success");
-                                                OnSignIn?.Invoke();
-
-                                                
-                                            }
-                                                
-                                            else
-                                                Console.WriteLine("failure");
+                                            OnSignUp?.Invoke(message);
+                                        }
+                                        else if(mes is SignInResponse)
+                                        {
+                                            SignInResponse message = (SignInResponse)mes;
+                                            OnSignIn?.Invoke(message);
                                         }
                                     }
 

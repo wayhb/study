@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    public class SignUpMessage: NetMessage
+    public class SignUpRequest: NetMessage
     {
         [JsonInclude]
         public string username;

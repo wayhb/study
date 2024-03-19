@@ -3,6 +3,7 @@ using System.Diagnostics.SymbolStore;
 using System.IO;
 using System.Net.Sockets;
 using System.Reflection.Metadata;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -38,13 +39,36 @@ namespace Server
                     // записываем в буфер все кроме пустых ячеек
                     var mes = JsonSerializer.Deserialize<NetMessage>(__buffer.AsSpan(0,bytes));
                     //если то, что пришло на вход это SignUpMessage(логин и пароль)
-                    if (mes is SignUpMessage)
+                    if (mes is SignUpRequest)
                     {
                         Console.WriteLine("Это SignUpMessage");
-                        SignUpMessage message = (SignUpMessage)mes;
-                        var user = new User(message.username);
-                        user.Password = message.password;
-                        SendMessage(new SignUpResponse() { Success = true });
+                        SignUpRequest message = (SignUpRequest)mes;
+                        try
+                        {
+                            var user = new User(message.username);
+                            user.Password = message.password;
+                            User.Save();
+                            SendMessage(new SignUpResponse() { Success = true });
+                        }
+                        catch(Exception ex)
+                        {
+                            SendMessage(new SignUpResponse { Success = false });
+                        }
+                    }
+                    else if(mes is SignInRequest)
+                    {
+                        SignInRequest message = (SignInRequest)mes;
+                        var user = User.FindUser(message.username);
+                        if (user != null && message.password.Equals(user.Password))
+                        {
+                            SendMessage(new SignInResponse() { Success = true });
+                        }
+                        else
+                            SendMessage(new SignInResponse() { Success = false });
+                    }
+                    else if(mes is SignOutRequest)
+                    {
+                        SignOutRequest message = (SignOutRequest)mes;
                     }
                 }
                 catch(Exception ex)
