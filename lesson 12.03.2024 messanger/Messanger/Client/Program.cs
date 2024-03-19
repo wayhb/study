@@ -20,7 +20,12 @@ namespace Client
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
             Client = new Client();
+
             Client.active = true;
+            Client.OnSignIn += () => 
+            {
+                Console.WriteLine("что нибудь");
+            };
             Console.WriteLine("У вас уже есть аккаунт? y or n?");
             while (true)
             {

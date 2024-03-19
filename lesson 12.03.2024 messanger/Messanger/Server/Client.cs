@@ -8,10 +8,9 @@ using System.Text.Json.Serialization;
 
 namespace Server
 {
-    class Client
+    class Client : SendAndGetMessage
     {
         readonly TcpClient __tcp_client;
-        readonly NetworkStream __stream;
         public void Deactivate()
           => __tcp_client.Close();
         static byte[] __buffer = new byte[256];
@@ -20,22 +19,26 @@ namespace Server
             try
             {
                 // TODO: send messages.
-                __stream.WriteByte(0);
-                __stream.Flush();
+                //__stream.WriteByte(0);
+                //__stream.Flush();
             }
             catch
             {
                 return false;
             }
-            int bytesCount;
+            // если в потоке есть данные
             if (__stream.DataAvailable )
             {
                 //Console.WriteLine("Сервер: получение");
+
+                //чтение из потока сообщения в буфер(возвращает длину сообщения)
                 var bytes = __stream.Read(__buffer);
                 try
                 {
+                    // записываем в буфер все кроме пустых ячеек
                     var mes = JsonSerializer.Deserialize<NetMessage>(__buffer.AsSpan(0,bytes));
-                    if(mes is SignUpMessage)
+                    //если то, что пришло на вход это SignUpMessage(логин и пароль)
+                    if (mes is SignUpMessage)
                     {
                         Console.WriteLine("Это SignUpMessage");
                         SignUpMessage message = (SignUpMessage)mes;
@@ -56,11 +59,6 @@ namespace Server
         {
             __tcp_client = tcp_client;
             __stream = __tcp_client.GetStream();
-        }
-        public void SendMessage(NetMessage message)
-        {
-            JsonSerializer.Serialize(__stream, message);
-            __stream.Flush();
         }
     }
     

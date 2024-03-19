@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Загрузки\\Messanger\\Messanger\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\Adelya\\Desktop\\study\\lesson 12.03.2024 messanger\\Messanger\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "D:\\Загрузки\\Messanger\\Messanger\\Server\\Server.csproj",
+      "projectPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 12.03.2024 messanger\\Messanger\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\Adelya\\.nuget\\packages\\",
-      "outputPath": "D:\\Загрузки\\Messanger\\Messanger\\Server\\obj\\",
+      "outputPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 12.03.2024 messanger\\Messanger\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Adelya\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Загрузки\\Messanger\\Messanger\\Shared\\Shared.csproj": {
-              "projectPath": "D:\\Загрузки\\Messanger\\Messanger\\Shared\\Shared.csproj"
+            "C:\\Users\\Adelya\\Desktop\\study\\lesson 12.03.2024 messanger\\Messanger\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\Adelya\\Desktop\\study\\lesson 12.03.2024 messanger\\Messanger\\Shared\\Shared.csproj"
             }
           }
         }

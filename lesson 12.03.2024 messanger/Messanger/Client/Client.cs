@@ -1,13 +1,16 @@
 ﻿using Shared;
+using System;
+using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Text.Json;
 
 namespace Client
 {
-    class Client
+    class Client : SendAndGetMessage
     {
         readonly TcpClient __tcp_client = new();
-        NetworkStream? __stream;
+        public delegate void OnSignInHandler();
+        public event OnSignInHandler OnSignIn;
         public bool active
         {
             get
@@ -22,11 +25,40 @@ namespace Client
                         Console.WriteLine("Клиент: активирован.");
                         __stream = __tcp_client.GetStream();
 
-                        new Thread(() => 
+                        new Thread(() =>
                         {
+                            var __buffer = new byte[256];
                             while (true)
                             {
+                                if (__stream.DataAvailable)
+                                {
+                                    var bytes = __stream.Read(__buffer);
+                                    try
+                                    {
 
+                                        var mes = JsonSerializer.Deserialize<NetMessage>(__buffer.AsSpan(0, bytes));
+                                        if (mes is SignUpResponse)
+                                        {
+                                            Console.WriteLine("Это SignUpResponse");
+                                            SignUpResponse message = (SignUpResponse)mes;
+                                            if (message.Success == true)
+                                            {
+                                                Console.WriteLine("success");
+                                                OnSignIn?.Invoke();
+
+                                                
+                                            }
+                                                
+                                            else
+                                                Console.WriteLine("failure");
+                                        }
+                                    }
+
+                                    catch
+                                    {
+
+                                    }
+                                }
                                 try
                                 {
                                     __stream.WriteByte(0);
@@ -40,18 +72,16 @@ namespace Client
                                 }
                                 Thread.Sleep(1000);
                             }
+
+
                         }).Start();
-                        
-                    } 
+
+                    }
                     else
                         __tcp_client.Close();
                 }
             }
         }
-        public void SendMessage(NetMessage message)
-        {
-            JsonSerializer.Serialize(__stream, message);
-            __stream.Flush();
-        }
+
     }
 }
