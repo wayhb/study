@@ -41,12 +41,17 @@ namespace Client
             {
                 if (m.Success)
                 {
-                    Console.WriteLine("success");
+                    Console.WriteLine("Вход успешен");
+                    Client.SendMessage(new MessageToUser { Text = "отправляю сообщение" , Receiver = "Adel"});
                 }
                 else
                     Console.WriteLine("failure");
             };
-            Client.SendMessage(new SignUpRequest { username = "Adel", password = "jfdh"});
+            Client.OnMessageFromUser += (m) =>
+            {
+                Console.WriteLine($"сообщение {m.Text} пришло от {m.Sender}");
+            };
+                Client.SendMessage(new SignUpRequest { username = "Adel", password = "jfdh"});
             
             
             /*

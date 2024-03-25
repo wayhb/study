@@ -1,0 +1,15 @@
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\bin\Debug\net8.0\ClientTcp.exe
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\bin\Debug\net8.0\ClientTcp.deps.json
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\bin\Debug\net8.0\ClientTcp.runtimeconfig.json
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\bin\Debug\net8.0\ClientTcp.dll
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\bin\Debug\net8.0\ClientTcp.pdb
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\obj\Debug\net8.0\ClientTcp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\obj\Debug\net8.0\ClientTcp.AssemblyInfoInputs.cache
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\obj\Debug\net8.0\ClientTcp.AssemblyInfo.cs
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\obj\Debug\net8.0\ClientTcp.csproj.CoreCompileInputs.cache
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\obj\Debug\net8.0\ClientTcp.sourcelink.json
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\obj\Debug\net8.0\ClientTcp.dll
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\obj\Debug\net8.0\refint\ClientTcp.dll
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\obj\Debug\net8.0\ClientTcp.pdb
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\obj\Debug\net8.0\ClientTcp.genruntimeconfig.cache
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\ClientTcp\obj\Debug\net8.0\ref\ClientTcp.dll

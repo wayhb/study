@@ -16,6 +16,7 @@ namespace Shared
     [JsonDerivedType(typeof(SignUpResponse), nameof(SignUpResponse))]
     [JsonDerivedType(typeof(SignInRequest), nameof(SignInRequest))]
     [JsonDerivedType(typeof(SignInResponse), nameof(SignInResponse))]
+    [JsonDerivedType(typeof(MessageToUser), nameof(MessageToUser))]
     public abstract class NetMessage
     {
 

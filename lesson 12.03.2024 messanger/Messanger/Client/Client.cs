@@ -13,6 +13,8 @@ namespace Client
         public event OnSignInHandler OnSignIn;
         public delegate void OnSignUpHandler(SignUpResponse sign);
         public event OnSignUpHandler OnSignUp;
+        public delegate void OnMessageFromUserHandler(MessageFromUser message);
+        public event OnMessageFromUserHandler OnMessageFromUser;
         public bool active
         {
             get
@@ -49,6 +51,11 @@ namespace Client
                                             SignInResponse message = (SignInResponse)mes;
                                             OnSignIn?.Invoke(message);
                                         }
+                                        else if(mes is MessageFromUser)
+                                        {
+                                            MessageFromUser message = (MessageFromUser)mes;
+                                            OnMessageFromUser?.Invoke(message);
+                                        }
                                     }
 
                                     catch
@@ -56,6 +63,7 @@ namespace Client
 
                                     }
                                 }
+                                
                                 try
                                 {
                                     __stream.WriteByte(0);

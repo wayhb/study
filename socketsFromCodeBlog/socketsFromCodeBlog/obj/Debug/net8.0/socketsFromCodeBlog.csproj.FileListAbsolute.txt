@@ -1,0 +1,15 @@
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\bin\Debug\net8.0\socketsFromCodeBlog.exe
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\bin\Debug\net8.0\socketsFromCodeBlog.deps.json
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\bin\Debug\net8.0\socketsFromCodeBlog.runtimeconfig.json
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\bin\Debug\net8.0\socketsFromCodeBlog.dll
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\bin\Debug\net8.0\socketsFromCodeBlog.pdb
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\obj\Debug\net8.0\socketsFromCodeBlog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\obj\Debug\net8.0\socketsFromCodeBlog.AssemblyInfoInputs.cache
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\obj\Debug\net8.0\socketsFromCodeBlog.AssemblyInfo.cs
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\obj\Debug\net8.0\socketsFromCodeBlog.csproj.CoreCompileInputs.cache
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\obj\Debug\net8.0\socketsFromCodeBlog.sourcelink.json
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\obj\Debug\net8.0\socketsFromCodeBlog.dll
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\obj\Debug\net8.0\refint\socketsFromCodeBlog.dll
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\obj\Debug\net8.0\socketsFromCodeBlog.pdb
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\obj\Debug\net8.0\socketsFromCodeBlog.genruntimeconfig.cache
+C:\Users\Adelya\Desktop\study\socketsFromCodeBlog\socketsFromCodeBlog\obj\Debug\net8.0\ref\socketsFromCodeBlog.dll

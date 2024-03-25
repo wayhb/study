@@ -27,7 +27,7 @@ namespace Server
             } 
         }
         public string Password { get; set; }
-        static List<User> Users { get; }
+        static List<User> Users { get; } = new();
         public static User? FindUser(string name)
         {
             return Users.SingleOrDefault(u => u.Name.Equals(name));
@@ -51,7 +51,7 @@ namespace Server
             {
                 using (var file = File.OpenRead("data\\users.json"))
                 {
-                    Users = JsonSerializer.Deserialize<List<User>>(file);
+                    JsonSerializer.Deserialize<List<User>>(file);
                 }
             }
             catch (FileNotFoundException)
@@ -73,6 +73,7 @@ namespace Server
         {
             Name = name;
             Password = password;
+            Users.Add(this);
         }
     }
 }

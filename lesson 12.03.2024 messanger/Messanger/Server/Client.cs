@@ -15,6 +15,7 @@ namespace Server
         public void Deactivate()
           => __tcp_client.Close();
         static byte[] __buffer = new byte[256];
+        public User? User { get; set; }
         public bool Tick()
         {
             try
@@ -48,28 +49,47 @@ namespace Server
                             var user = new User(message.username);
                             user.Password = message.password;
                             User.Save();
+                            User = user;
                             SendMessage(new SignUpResponse() { Success = true });
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             SendMessage(new SignUpResponse { Success = false });
                         }
                     }
-                    else if(mes is SignInRequest)
+                    else if (mes is SignInRequest)
                     {
                         SignInRequest message = (SignInRequest)mes;
                         var user = User.FindUser(message.username);
+
                         if (user != null && message.password.Equals(user.Password))
                         {
+                            User = user;
                             SendMessage(new SignInResponse() { Success = true });
                         }
                         else
                             SendMessage(new SignInResponse() { Success = false });
                     }
-                    else if(mes is SignOutRequest)
+                    else if (mes is SignOutRequest)
                     {
+
                         SignOutRequest message = (SignOutRequest)mes;
+                        User = null;
+
                     }
+                    else if(User != null)
+                    {
+                        if (mes is MessageToUser)
+                        {
+                            MessageToUser message = (MessageToUser)mes;
+                            var receiver = User.FindUser(message.Receiver);
+                            if (receiver != null)
+                            {
+                                SendMessage(new MessageFromUser { Text = message.Text, Sender = User.Name });
+                            }
+                        }
+                    }
+                    
                 }
                 catch(Exception ex)
                 {

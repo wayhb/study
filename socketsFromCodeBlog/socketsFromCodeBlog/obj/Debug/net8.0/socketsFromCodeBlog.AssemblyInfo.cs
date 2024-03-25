@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("socketsFromCodeBlog")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c82b190b6ac9b878cad357d3b8194f95cdc5e08")]
 [assembly: System.Reflection.AssemblyProductAttribute("socketsFromCodeBlog")]
 [assembly: System.Reflection.AssemblyTitleAttribute("socketsFromCodeBlog")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
