@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared
+namespace Shared.Messages
 {
-    public class SignOutRequest: NetMessage
+    public class DeleteUserRequest : BaseMessage
     {
 
     }

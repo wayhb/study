@@ -1,4 +1,5 @@
 ﻿using Shared;
+using Shared.Messages;
 using System.Diagnostics.SymbolStore;
 using System.IO;
 using System.Net.Sockets;
@@ -9,9 +10,10 @@ using System.Text.Json.Serialization;
 
 namespace Server
 {
-    class Client : SendAndGetMessage
+    class Client : BaseClient
     {
         readonly TcpClient __tcp_client;
+
         public void Deactivate()
           => __tcp_client.Close();
         static byte[] __buffer = new byte[256];
@@ -32,13 +34,14 @@ namespace Server
             if (__stream.DataAvailable )
             {
                 //Console.WriteLine("Сервер: получение");
-
+                int length = reader.ReadInt32();
+                
                 //чтение из потока сообщения в буфер(возвращает длину сообщения)
-                var bytes = __stream.Read(__buffer);
+                __stream.ReadExactly(__buffer, 0, length);
                 try
                 {
                     // записываем в буфер все кроме пустых ячеек
-                    var mes = JsonSerializer.Deserialize<NetMessage>(__buffer.AsSpan(0,bytes));
+                    var mes = JsonSerializer.Deserialize<BaseMessage>(__buffer.AsSpan(0,length));
                     //если то, что пришло на вход это SignUpMessage(логин и пароль)
                     if (mes is SignUpRequest)
                     {
@@ -46,13 +49,12 @@ namespace Server
                         SignUpRequest message = (SignUpRequest)mes;
                         try
                         {
-                            var user = new User(message.username);
-                            user.Password = message.password;
-                            User.Save();
+                            var user = new User(message.username, message.password);
+                            user.Save();
                             User = user;
                             SendMessage(new SignUpResponse() { Success = true });
                         }
-                        catch (Exception ex)
+                        catch
                         {
                             SendMessage(new SignUpResponse { Success = false });
                         }
@@ -79,14 +81,20 @@ namespace Server
                     }
                     else if(User != null)
                     {
-                        if (mes is MessageToUser)
+                        if (mes is SendTextRequest message)
                         {
-                            MessageToUser message = (MessageToUser)mes;
                             var receiver = User.FindUser(message.Receiver);
                             if (receiver != null)
                             {
-                                SendMessage(new MessageFromUser { Text = message.Text, Sender = User.Name });
+                                SendMessage(new SendTextResponse { Text = message.Text, Sender = User.Name });
                             }
+                        }
+                        else if (mes is DeleteUserRequest deleteUser)
+                        {
+
+                            User.Delete();
+                            User = null;
+                            SendMessage(new DeleteUserResponse() { Success = true });
                         }
                     }
                     

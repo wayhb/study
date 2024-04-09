@@ -5,10 +5,10 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace Shared
+namespace Shared.Messages
 {
-    // запрос клиента к серверу, когда клиент хочет войти в систему 
-    public class SignInRequest:NetMessage
+    //запрос клиента к серверу, зарегистрироваться
+    public class SignUpRequest : BaseMessage
     {
         [JsonInclude]
         public string username;

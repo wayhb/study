@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Server
 {
@@ -32,40 +33,46 @@ namespace Server
         {
             return Users.SingleOrDefault(u => u.Name.Equals(name));
         }
-        public User(string name)
+        public void Delete()
         {
-            Name = name;
-            Users.Add(this);
+            Users.Remove(this);
+            File.Delete($"data\\users\\{Name}.json");
         }
-        public static void Save()
+        public void Save()
         {
-            Directory.CreateDirectory("data");
-            using (var file = File.Create("data\\users.json"))
+            Directory.CreateDirectory("data\\users");
+
+            using (var file = File.Create($"data\\users\\{Name}.json"))
             {
-                JsonSerializer.Serialize<List<User>>(file, Users);
+                JsonSerializer.Serialize(file, this);
             }
         }
         static User()
         {
+
             try
             {
-                using (var file = File.OpenRead("data\\users.json"))
+                foreach (var filePath in Directory.EnumerateFiles("data\\users"))
                 {
-                    JsonSerializer.Deserialize<List<User>>(file);
+                    using (var file = File.OpenRead(filePath))
+                    {
+                        JsonSerializer.Deserialize<User>(file);
+                    }
                 }
+                
             }
             catch (FileNotFoundException)
             { 
-                Users=new List<User>();
+
             }
             catch(DirectoryNotFoundException)
             {
-                Users = new List<User>();
+
             }
-            catch (Exception ex)
+            catch
             {
                 Console.WriteLine("Необработанная ошибка");
-                throw ex;
+                throw;
             }
         }
         [JsonConstructor]

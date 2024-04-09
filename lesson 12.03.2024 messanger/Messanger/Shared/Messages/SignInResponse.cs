@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared
+namespace Shared.Messages
 {
     //ответ сервера успешно или нет вошел пользователь
-    public class SignInResponse : NetMessage
+    public class SignInResponse : BaseMessage
     {
         public bool Success { get; set; }
     }

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared
+namespace Shared.Messages
 {
     // сообщение от пользователя через сервер к клиенту
-    public class MessageToUser:NetMessage
+    public class SendTextRequest : BaseMessage
     {
-        public string Text {  get; set; }
+        public string Text { get; set; }
         // получатель
         public string Receiver { get; set; }
 

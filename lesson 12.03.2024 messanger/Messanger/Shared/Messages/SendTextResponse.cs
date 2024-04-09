@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared
+namespace Shared.Messages
 {
     // сообщение, когда сервер передает свое сообщение конечному получателю
-    public class MessageFromUser : NetMessage
+    public class SendTextResponse : BaseMessage
     {
         public string Text { get; set; }
         // отправитель

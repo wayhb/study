@@ -1,4 +1,5 @@
 ﻿using Shared;
+using Shared.Messages;
 using System;
 using System.Linq.Expressions;
 using System.Net.Sockets;
@@ -6,14 +7,16 @@ using System.Text.Json;
 
 namespace Client
 {
-    class Client : SendAndGetMessage
+    class Client : BaseClient
     {
         readonly TcpClient __tcp_client = new();
-        public delegate void OnSignInHandler(SignInResponse sign);
+        public delegate void OnSignInHandler(SignInResponse response);
         public event OnSignInHandler OnSignIn;
-        public delegate void OnSignUpHandler(SignUpResponse sign);
+        public delegate void OnSignUpHandler(SignUpResponse response);
         public event OnSignUpHandler OnSignUp;
-        public delegate void OnMessageFromUserHandler(MessageFromUser message);
+        public delegate void OnDeleteHandler(DeleteUserResponse response);
+        public event OnDeleteHandler OnDelete;
+        public delegate void OnMessageFromUserHandler(SendTextResponse message);
         public event OnMessageFromUserHandler OnMessageFromUser;
         public bool active
         {
@@ -36,11 +39,19 @@ namespace Client
                             {
                                 if (__stream.DataAvailable)
                                 {
-                                    var bytes = __stream.Read(__buffer);
+
+                                    int length;
+                                    BinaryReader reader = new(__stream);
+                                    length = reader.ReadInt32();
+
+                                    //чтение из потока сообщения в буфер(возвращает длину сообщения)
+                                    __stream.ReadExactly(__buffer, 0, length);
+
+
                                     try
                                     {
 
-                                        var mes = JsonSerializer.Deserialize<NetMessage>(__buffer.AsSpan(0, bytes));
+                                        var mes = JsonSerializer.Deserialize<BaseMessage>(__buffer.AsSpan(0,length));
                                         if (mes is SignUpResponse)
                                         {
                                             SignUpResponse message = (SignUpResponse)mes;
@@ -51,10 +62,15 @@ namespace Client
                                             SignInResponse message = (SignInResponse)mes;
                                             OnSignIn?.Invoke(message);
                                         }
-                                        else if(mes is MessageFromUser)
+                                        else if(mes is SendTextResponse)
                                         {
-                                            MessageFromUser message = (MessageFromUser)mes;
+                                            SendTextResponse message = (SendTextResponse)mes;
                                             OnMessageFromUser?.Invoke(message);
+                                        }
+                                        else if (mes is DeleteUserResponse)
+                                        {
+                                            DeleteUserResponse message = (DeleteUserResponse)mes;
+                                            OnDelete?.Invoke(message);
                                         }
                                     }
 
@@ -66,8 +82,8 @@ namespace Client
                                 
                                 try
                                 {
-                                    __stream.WriteByte(0);
-                                    __stream.Flush();
+                                    //__stream.WriteByte(0);
+                                    //__stream.Flush();
                                     //Console.WriteLine("Клиент: отправка.");
                                 }
                                 catch
