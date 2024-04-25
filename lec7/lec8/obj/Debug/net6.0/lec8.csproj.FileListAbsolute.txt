@@ -1,4 +1,0 @@
-C:\Users\SystemX\Desktop\c#\lec8\lec8\obj\Debug\net6.0\lec8.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\SystemX\Desktop\c#\lec8\lec8\obj\Debug\net6.0\lec8.AssemblyInfoInputs.cache
-C:\Users\SystemX\Desktop\c#\lec8\lec8\obj\Debug\net6.0\lec8.AssemblyInfo.cs
-C:\Users\SystemX\Desktop\c#\lec8\lec8\obj\Debug\net6.0\lec8.csproj.CoreCompileInputs.cache
